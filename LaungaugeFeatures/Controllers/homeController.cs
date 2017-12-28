@@ -86,7 +86,14 @@ namespace LaungaugeFeatures.Controllers
             decimal arraytotal = ProductArray.TotalPrices();
             TempData["TotalPrices"] = new String[] { $" Cart Total: {carttotal:C2}", $"Array Total: {arraytotal:C2}" };
 
+            //filter by price.
+            decimal arrayTotal = ProductArray.FilterByPrice(30).TotalPrices();
+            TempData["TotalPrices"] = new String[] { $" Cart Total: {carttotal:C2}", $"Array Total: {arraytotal:C2}" };
 
+
+            //filter by name.
+            decimal nameFilterTotal = ProductArray.FilterByName('b').TotalPrices();
+            TempData["TotalNamePrices"] = new String[] { $"Name Filter Total: {nameFilterTotal:C2}" };
 
 
             return View();

@@ -33,5 +33,18 @@ namespace LaungaugeFeatures.Models
                 }
             }
         }
+
+        public static IEnumerable<ProductVM> FilterByName(this IEnumerable<ProductVM> productEnum, char firstLetter)
+        {
+            foreach(ProductVM prod in productEnum)
+            {
+                if(prod?.name[0] == firstLetter)
+                {
+                    yield return prod;
+                }
+            }
+        }
+      
+
+        }
     }
-}
