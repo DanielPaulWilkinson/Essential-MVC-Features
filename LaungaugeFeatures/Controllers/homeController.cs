@@ -9,7 +9,7 @@ namespace LaungaugeFeatures.Controllers
 {
     public class HomeController : Controller
     {
-        public ViewResult Index()
+        public async Task<ViewResult> IndexAsync()
         {
 
             //1) Adding values when values are missing.
@@ -128,7 +128,18 @@ namespace LaungaugeFeatures.Controllers
                 new { name = "Car", price = 23123},
                 new { name = "Boat", price = 2355443},
             };
-           // return View(productss.Select(p => p?.name));
+            // return View(productss.Select(p => p?.name));
+
+
+
+            //async method
+            long? result = await AsyncMethods.GetPageLength();
+            //return View($"page langth: {result}");
+
+
+
+
+
 
             return View();
         }
