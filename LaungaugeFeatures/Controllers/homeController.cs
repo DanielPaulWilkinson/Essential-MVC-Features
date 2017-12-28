@@ -115,7 +115,21 @@ namespace LaungaugeFeatures.Controllers
                 .Filter(p => p?.name?[0] == 's')
                 .TotalPrices();
 
-       
+
+
+            //using inference and anonymous types
+            //var Names = new[] {"Kyak","Bike","Car"};
+            //return View(Names);
+
+            var productss = new[]
+            {
+                new { name = "Kyak", price = 1},
+                new { name = "Bike", price = 200},
+                new { name = "Car", price = 23123},
+                new { name = "Boat", price = 2355443},
+            };
+           // return View(productss.Select(p => p?.name));
+
             return View();
         }
         //returning actionresult as lambina expression
