@@ -21,5 +21,17 @@ namespace LaungaugeFeatures.Models
             }
             return decimaltotal;
         }
+
+   
+        public static IEnumerable<ProductVM> FilterByPrice(this IEnumerable<ProductVM> productEnum, decimal minimumPrice)
+        {
+            foreach(ProductVM prod in productEnum)
+            {
+                if((prod?.price ?? 0) >= minimumPrice)
+                {
+                    yield return prod;
+                }
+            }
+        }
     }
 }

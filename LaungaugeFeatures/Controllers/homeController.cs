@@ -74,10 +74,13 @@ namespace LaungaugeFeatures.Controllers
 
             ProductVM[] ProductArray =
             {
-                new ProductVM{name="Kayak",price=100},
-                new ProductVM{name="Bike",price=20},
+                new ProductVM{name="Kayak",price=1},
+                new ProductVM{name="Bike",price=2},
                 new ProductVM{name="Car",price=789},
-                new ProductVM{name="Boat",price=82178},
+                new ProductVM{name="Boat",price=8},
+                new ProductVM{name="plane",price=100},
+                new ProductVM{name="train",price=20000},
+                new ProductVM{name="submarine",price=39},
             }; 
             decimal carttotal = cart.TotalPrices();
             decimal arraytotal = ProductArray.TotalPrices();
