@@ -44,6 +44,18 @@ namespace LaungaugeFeatures.Models
                 }
             }
         }
+        public static IEnumerable<ProductVM> Filter(
+            this IEnumerable<ProductVM> productEnum,
+            Func<ProductVM, bool> selector)
+        {
+            foreach(ProductVM prod in productEnum)
+            {
+                if (selector(prod))
+                {
+                    yield return prod;
+                }
+            }
+        }
       
 
         }

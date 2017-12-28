@@ -95,6 +95,28 @@ namespace LaungaugeFeatures.Controllers
             decimal nameFilterTotal = ProductArray.FilterByName('b').TotalPrices();
             TempData["TotalNamePrices"] = new String[] { $"Name Filter Total: {nameFilterTotal:C2}" };
 
+            //class to filter by price
+            bool FilterByPrice(ProductVM p)
+            {
+                return (p?.price ?? 0) >= 20;
+            }
+
+        
+            //filter name
+            Func<ProductVM, bool> nameFilter = delegate (ProductVM prod)
+            {
+                return prod?.name?[0] == 's';
+            };
+
+            decimal priceFilterTotal2 = ProductArray
+                .Filter(p => (p?.price ?? 0) >= 20)
+                .TotalPrices();
+            decimal nameFilterTotal2 = ProductArray
+                .Filter(p => p?.name?[0] == 's')
+                .TotalPrices();
+                
+
+
 
             return View();
         }
