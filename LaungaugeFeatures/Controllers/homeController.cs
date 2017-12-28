@@ -114,11 +114,11 @@ namespace LaungaugeFeatures.Controllers
             decimal nameFilterTotal2 = ProductArray
                 .Filter(p => p?.name?[0] == 's')
                 .TotalPrices();
-                
 
-
-
+       
             return View();
         }
+        //returning actionresult as lambina expression
+        public ActionResult Index1() => View(ProductVM.getProduct().Select(P => P.name[0] == 'B'));
     }
 }

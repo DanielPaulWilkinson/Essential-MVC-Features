@@ -22,6 +22,8 @@ namespace LaungaugeFeatures.Models
         public ProductVM Related { get; set; }
         //created property 27/12/17 22.56pm - read only value.
         public bool inStock { get; } = true;
+        //created property 28/12/17 14:27pm - initalizing value with lambina
+        public bool NameBeginsWithS => name?[0] == 's';
 
         public static ProductVM[] getProduct()
         {
